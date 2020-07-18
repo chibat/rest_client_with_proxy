@@ -13,8 +13,6 @@ RUN curl -fsSL https://deno.land/x/install/install.sh | sh
 
 RUN sudo apt-get install squid -y && \
     sudo htpasswd -c /etc/squid/.htpasswd user1
-#    sudo cp conf/squid.conf /etc/squid/. && \
-#    sudo /etc/init.d/squid start
 
 COPY conf/squid.conf /etc/squid/squid.conf
 RUN sudo /etc/init.d/squid start

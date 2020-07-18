@@ -3,7 +3,7 @@ image:
 
 tasks:
   - init: 'echo "TODO: Replace with init/build command"'
-    command: set -o vi
+    command: set -o vi && sudo /etc/init.d/squid start
 vscode:
   extensions:
     - denoland.vscode-deno@1.25.0:HlnpzVQnhSGD48z7hSihqQ==
