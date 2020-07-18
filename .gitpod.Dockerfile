@@ -26,4 +26,4 @@ RUN mkdir -p ~/.vim/pack/coc/start && \
     echo '{"dependencies":{}}' > package.json && \
     npm install coc-tsserver coc-deno
 
-ENTRYPOINT ["sudo /etc/init.d/squid start"]
+CMD ["sudo /etc/init.d/squid start"]
