@@ -77,7 +77,7 @@ export async function exchange(
   }
 
   const requestMessage = makeRequestMessage(request, endpointUrl);
-  console.debug(requestMessage);
+  //console.debug(requestMessage);
   await Deno.writeAll(conn, new TextEncoder().encode(requestMessage));
   const response = await makeResponse(reader);
   conn.close();
@@ -118,12 +118,12 @@ async function connectProxy(
     headerArray.join("") +
     DELIMITER;
 
-  console.debug(connectRequest);
+  //console.debug(connectRequest);
   const decoder = new TextDecoder("utf-8");
   await Deno.writeAll(conn, new TextEncoder().encode(connectRequest));
   const statusLine = await reader.readLine();
   if (statusLine) {
-    console.debug(decoder.decode(statusLine.line));
+    //console.debug(decoder.decode(statusLine.line));
     // TODO
     const status = statusLine
       ? Number.parseInt(decoder.decode((statusLine)?.line).split(" ")[1])
@@ -143,7 +143,7 @@ async function connectProxy(
     if (lineResult.line.length === 0) {
       break;
     }
-    console.debug(decoder.decode(lineResult.line));
+    //console.debug(decoder.decode(lineResult.line));
   }
 
   // TODO if 200 response, start TLS
@@ -235,7 +235,7 @@ async function makeResponse(reader: BufReader): Promise<Response> {
     const name = line.substring(0, position).trim();
     const value = line.substring(position + 1).trim();
     headers.set(name, value);
-    console.debug(line);
+    //console.debug(line);
   }
 
   const value = headers.get(Header.CONTENT_LENGTH);
@@ -280,7 +280,7 @@ async function makeResponse(reader: BufReader): Promise<Response> {
     }
     body = decoder.decode(bodyArray);
   }
-  console.debug(status);
+  //console.debug(status);
   return new Response({
     status: status,
     body: body,

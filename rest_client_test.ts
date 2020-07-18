@@ -1,23 +1,26 @@
-import { exchange, Request } from "./rest_client.ts";
-
-// normal
-const url =
-  "https://gist.githubusercontent.com/chibat/b207260420c1b85012036ffc6743f427/raw/16d7a15460df1d40596b2e6a151fd2604ea10afd/hello.txt";
+import { exchange } from "./rest_client.ts";
+// import { exchange } from "https://raw.githubusercontent.com/chibat/rest_client_with_proxy/master/rest_client.ts";
 
 // chunk
 // const url = "https://github.com/";
 
-const request: Request = { method: "GET", url: url };
-const res = await exchange(
-  request,
+const response = await exchange(
+  {
+    url:
+      "https://raw.githubusercontent.com/chibat/rest_client_with_proxy/master/test/hello.json",
+  },
   {
     hostname: "localhost",
     port: 3128,
     credentials: { name: "user1", password: "test" },
   },
 );
-console.log("Status: " + res.status);
-console.log("Body: " + res.body);
+
+type ResponseType = { text: string };
+const responseText = response.json<ResponseType>().text;
+
+console.log(responseText);
+// hello
 
 // deno run -A --unstable rest_client_test.ts
 
