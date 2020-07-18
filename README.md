@@ -15,13 +15,15 @@ import { exchange } from "https://raw.githubusercontent.com/chibat/rest_client_w
 
 const response = await exchange(
   {
-    url:
-      "https://raw.githubusercontent.com/chibat/rest_client_with_proxy/master/test/hello.json",
-  },
-  {
-    hostname: "proxy-server.example.com",
-    port: 3128,
-    credentials: { name: "user1", password: "test" },
+    request: {
+      url:
+        "https://raw.githubusercontent.com/chibat/rest_client_with_proxy/master/test/hello.json",
+    },
+    proxy: {
+      hostname: "proxy-server.example.com",
+      port: 3128,
+      credentials: { name: "user1", password: "test" },
+    },
   },
 );
 

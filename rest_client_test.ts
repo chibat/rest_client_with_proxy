@@ -6,13 +6,15 @@ import { exchange } from "./rest_client.ts";
 
 const response = await exchange(
   {
-    url:
-      "https://raw.githubusercontent.com/chibat/rest_client_with_proxy/master/test/hello.json",
-  },
-  {
-    hostname: "localhost",
-    port: 3128,
-    credentials: { name: "user1", password: "test" },
+    request: {
+      url:
+        "https://raw.githubusercontent.com/chibat/rest_client_with_proxy/master/test/hello.json",
+    },
+    proxy: {
+      hostname: "localhost",
+      port: 3128,
+      credentials: { name: "user1", password: "test" },
+    },
   },
 );
 

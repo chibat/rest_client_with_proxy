@@ -22,6 +22,11 @@ export type Request = {
   credentials?: PasswordCredential;
 };
 
+export type Param = {
+  request: Request;
+  proxy: Proxy;
+};
+
 export class Response {
   readonly body?: string;
   readonly status?: number | null;
@@ -43,9 +48,10 @@ export class Response {
 const DELIMITER = "\r\n";
 
 export async function exchange(
-  request: Request,
-  proxy?: Proxy,
+  param: Param,
 ): Promise<Response> {
+  const request = param.request;
+  const proxy = param.proxy;
   const endpointUrl = request.url instanceof URL
     ? request.url
     : new URL(request.url);
