@@ -8,7 +8,7 @@ This repository is currently experimental.
 {"text": "Hello"}
 ```
 
-## rest_client_test.ts
+## rest_client_example.ts
 
 ```typescript
 import { exchange } from "https://raw.githubusercontent.com/chibat/rest_client_with_proxy/master/rest_client.ts";
@@ -37,8 +37,8 @@ console.log(responseText);
 ## Execute
 
 ```
-$ deno cache --reload rest_client_test.ts
-$ deno run --allow-net --unstable rest_client_test.ts
+$ deno cache --reload rest_client_example.ts
+$ deno run --allow-net --unstable rest_client_example.ts
 Hello
 ```
 
