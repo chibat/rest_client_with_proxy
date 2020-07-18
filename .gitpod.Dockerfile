@@ -15,7 +15,6 @@ RUN sudo apt-get install squid -y && \
     sudo htpasswd -c /etc/squid/.htpasswd user1
 
 COPY conf/squid.conf /etc/squid/squid.conf
-RUN sudo /etc/init.d/squid start
 
 # coc.nvim
 # https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim
@@ -27,3 +26,4 @@ RUN mkdir -p ~/.vim/pack/coc/start && \
     echo '{"dependencies":{}}' > package.json && \
     npm install coc-tsserver coc-deno
 
+ENTRYPOINT ["sudo /etc/init.d/squid start"]
