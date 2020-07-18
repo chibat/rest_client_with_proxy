@@ -17,6 +17,7 @@ RUN sudo apt-get install squid -y && \
 #    sudo /etc/init.d/squid start
 
 COPY conf/squid.conf /etc/squid/squid.conf
+RUN sudo /etc/init.d/squid start
 
 # coc.nvim
 # https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim
