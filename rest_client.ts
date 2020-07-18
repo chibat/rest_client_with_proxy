@@ -46,7 +46,6 @@ export async function exchange(
   request: Request,
   proxy?: Proxy,
 ): Promise<Response> {
-
   const endpointUrl = request.url instanceof URL
     ? request.url
     : new URL(request.url);
@@ -96,7 +95,6 @@ async function connectProxy(
   reader: BufReader,
   proxy: Proxy,
 ): Promise<Deno.Conn> {
-
   const port = endpointUrl.port ? endpointUrl.port : 443;
   const headers = new Headers();
   headers.set(Header.HOST, `${endpointUrl.hostname}:${port}`);
@@ -165,7 +163,6 @@ export class Header {
 }
 
 function makeRequestMessage(request: Request, url: URL, proxy?: Proxy) {
-
   const method = request.method ? request.method : "GET";
   const headers = request.headers ? request.headers : new Headers();
   const bodyString = typeof request.body === "string"

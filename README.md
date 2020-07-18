@@ -1,1 +1,6 @@
-# rest_client_with_proxy
+# REST Client with Proxy
+
+This repository is currently experimental.
+
+
+
