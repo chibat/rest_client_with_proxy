@@ -1,4 +1,4 @@
-# REST Client with Configurable Proxy
+# REST Client with Configurable Proxy for Deno
 
 This repository is currently experimental.
 
