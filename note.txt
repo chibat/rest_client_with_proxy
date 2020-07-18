@@ -1,0 +1,13 @@
+
+/etc/init.d/squid restart
+/etc/init.d/squid start
+/etc/init.d/squid stop
+/etc/init.d/squid
+/etc/squid/squid.conf
+htpasswd -c /etc/squid/.htpasswd user1 test
+/usr/lib/squid/basic_ncsa_auth
+squid
+systemctl start squid
+tail -f /var/log/squid/access.log
+/etc/squid/.htpasswd
+

@@ -12,8 +12,8 @@ ENV PATH=$DENO_INSTALL/bin:$PATH
 RUN curl -fsSL https://deno.land/x/install/install.sh | sh
 
 RUN sudo apt-get install squid -y && \
-    cp conf/squid.conf /etc/squid/. && \
-    htpasswd -c /etc/squid/.htpasswd user1 test && \
+    sudo cp conf/squid.conf /etc/squid/. && \
+    sudo htpasswd -c /etc/squid/.htpasswd user1 test && \
     sudo /etc/init.d/squid start
 
 # coc.nvim
