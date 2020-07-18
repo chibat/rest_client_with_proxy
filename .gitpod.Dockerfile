@@ -11,6 +11,11 @@ ENV DENO_INSTALL=$HOME/.deno
 ENV PATH=$DENO_INSTALL/bin:$PATH
 RUN curl -fsSL https://deno.land/x/install/install.sh | sh
 
+RUN sudo apt-get install squid -y && \
+    cp conf/squid.conf /etc/squid/. && \
+    htpasswd -c /etc/squid/.htpasswd user1 test && \
+    sudo /etc/init.d/squid start
+
 # coc.nvim
 # https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim
 RUN mkdir -p ~/.vim/pack/coc/start && \

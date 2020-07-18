@@ -4,8 +4,6 @@ image:
 tasks:
   - init: 'echo "TODO: Replace with init/build command"'
     command: set -o vi
-
 vscode:
   extensions:
-    - axetroy.vscode-deno@3.7.0:YlA2jgY/k6sHhu6khQB+gw==
-
+    - denoland.vscode-deno@1.25.0:HlnpzVQnhSGD48z7hSihqQ==
