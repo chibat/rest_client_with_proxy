@@ -38,7 +38,7 @@ console.log(responseText);
 
 ```
 $ deno cache --reload rest_client_test.ts
-$ deno run -A --unstable rest_client_test.ts
+$ deno run --allow-net --unstable rest_client_test.ts
 Hello
 ```
 
