@@ -1,9 +1,0 @@
-image:
-  file: .gitpod.Dockerfile
-
-tasks:
-  - init: 'echo "TODO: Replace with init/build command"'
-    command: set -o vi
-vscode:
-  extensions:
-    - denoland.vscode-deno@1.25.0:HlnpzVQnhSGD48z7hSihqQ==
