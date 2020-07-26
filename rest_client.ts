@@ -1,5 +1,5 @@
-import { BufReader } from "https://deno.land/std@0.61.0/io/bufio.ts";
-import { encode } from "https://deno.land/std@0.61.0/encoding/base64.ts";
+import { BufReader } from "https://deno.land/std@0.62.0/io/bufio.ts";
+import { encode } from "https://deno.land/std@0.62.0/encoding/base64.ts";
 
 export type PasswordCredential = {
   name: string;
@@ -24,15 +24,15 @@ export type Request = {
 
 export type Param = {
   request: Request;
-  proxy: Proxy;
+  proxy?: Proxy;
 };
 
 export class Response {
   readonly body?: string;
   readonly status?: number | null;
-  readonly headers?: Headers;
+  readonly headers: Headers;
   constructor(
-    init: { body?: string; status?: number | null; headers?: Headers },
+    init: { body?: string; status?: number | null; headers: Headers },
   ) {
     this.body = init.body;
     this.status = init.status;
