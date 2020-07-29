@@ -36,7 +36,7 @@ jobs:
         echo test, and deploy your project.
 
     - name: Deno test
-    - run: |
+      run: |
         deno --version
         deno run https://deno.land/std/examples/welcome.ts
         pwd
