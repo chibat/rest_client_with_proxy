@@ -1,4 +1,4 @@
-import { exchange } from "./rest_client.ts";
+import { exchange, Header } from "../rest_client.ts";
 import { assertEquals } from "https://deno.land/std@0.62.0/testing/asserts.ts";
 
 Deno.test("ok", async () => {
@@ -13,7 +13,7 @@ Deno.test("ok", async () => {
   assertEquals(response.body, '{"text": "Hello"}\n');
   assertEquals(response.status, 200);
   assertEquals(response.json<{ text: string }>().text, "Hello");
-  assertEquals(response.headers?.get("content-length"), "18");
+  assertEquals(response.headers.get("content-length"), "18");
 });
 
 Deno.test("not found", async () => {
@@ -28,3 +28,17 @@ Deno.test("not found", async () => {
   assertEquals(response.status, 404);
   assertEquals(response.body, "404: Not Found");
 });
+
+Deno.test("chunk", async () => {
+  const response = await exchange(
+    {
+      request: {
+        url: "https://github.com/",
+      },
+    },
+  );
+  assertEquals(response.status, 200);
+  assertEquals(response.headers.get(Header.TRANSFER_ENCODING), "chunked");
+});
+
+

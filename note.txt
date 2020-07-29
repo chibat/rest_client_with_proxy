@@ -11,3 +11,9 @@ systemctl start squid
 tail -f /var/log/squid/access.log
 /etc/squid/.htpasswd
 
+test
+* http
+* https
+* http + proxy
+* https + proxy
+
