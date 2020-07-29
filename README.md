@@ -1,3 +1,5 @@
+![CI](https://github.com/chibat/rest_client_with_proxy/workflows/CI/badge.svg)
+
 # REST Client with Configurable Proxy for Deno
 
 This repository is currently experimental.
