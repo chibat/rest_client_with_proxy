@@ -21,5 +21,5 @@ const responseText = response.json<ResponseType>().text;
 console.log(responseText);
 // hello
 
-// deno run -A --unstable rest_client_test.ts
+// deno run -A --unstable example.ts
 

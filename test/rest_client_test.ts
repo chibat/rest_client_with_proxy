@@ -40,5 +40,3 @@ Deno.test("chunk", async () => {
   assertEquals(response.status, 200);
   assertEquals(response.headers.get(Header.TRANSFER_ENCODING), "chunked");
 });
-
-
