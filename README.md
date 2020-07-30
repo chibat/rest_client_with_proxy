@@ -1,10 +1,10 @@
 # REST Client with Configurable Proxy for Deno
 
 [![CI](https://github.com/chibat/rest_client_with_proxy/workflows/CI/badge.svg)](https://github.com/chibat/rest_client_with_proxy/actions)
+[![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/raw.githubusercontent.com/chibat/rest_client_with_proxy/master/rest_client.ts)
 
 This repository is currently experimental.
 
-[![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/raw.githubusercontent.com/chibat/rest_client_with_proxy/master/rest_client.ts)
 
 ## hello.json
 
