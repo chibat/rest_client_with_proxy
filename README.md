@@ -4,7 +4,7 @@
 
 This repository is currently experimental.
 
-[deno doc](https://doc.deno.land/https/raw.githubusercontent.com/chibat/rest_client_with_proxy/master/rest_client.ts)
+[![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/raw.githubusercontent.com/chibat/rest_client_with_proxy/master/rest_client.ts)
 
 ## hello.json
 
