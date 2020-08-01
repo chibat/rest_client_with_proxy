@@ -28,4 +28,4 @@ jobs:
     - name: Deno test
       run: |
         deno --version
-        ./test/test.sh
+        ./test/rest_client_test.sh
