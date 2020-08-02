@@ -1,5 +1,5 @@
 import { exchange } from "../rest_client.ts";
-import { assertEquals } from "https://deno.land/std@0.62.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.63.0/testing/asserts.ts";
 
 Deno.test("ok", async () => {
   const response = await exchange(

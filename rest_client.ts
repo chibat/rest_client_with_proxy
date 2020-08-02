@@ -1,5 +1,5 @@
-import { BufReader } from "https://deno.land/std@0.62.0/io/bufio.ts";
-import { encode } from "https://deno.land/std@0.62.0/encoding/base64.ts";
+import { BufReader } from "https://deno.land/std@0.63.0/io/bufio.ts";
+import { encode } from "https://deno.land/std@0.63.0/encoding/base64.ts";
 
 export type PasswordCredential = {
   name: string;
